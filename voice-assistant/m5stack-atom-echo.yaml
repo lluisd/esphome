@@ -153,15 +153,15 @@ voice_assistant:
         blue: 0%
         brightness: 100%
         effect: "Fast Pulse"
-    - while:
-        condition:
-          switch.is_on: timer_ringing
-        then:
-          - lambda: id(echo_speaker).play(id(timer_finished_wave_file), sizeof(id(timer_finished_wave_file)));
-          - delay: 1s
-    - wait_until:
-        not:
-          speaker.is_playing:
+    #- while:
+        #condition:
+          #switch.is_on: timer_ringing
+        #then:
+          #- lambda: id(echo_speaker).play(id(timer_finished_wave_file), sizeof(id(timer_finished_wave_file)));
+          #- delay: 1s
+    #- wait_until:
+        #not:
+          #speaker.is_playing:
     - light.turn_off: led
     - switch.turn_off: timer_ringing
     - if:
